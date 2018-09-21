@@ -4,6 +4,7 @@ import Navigation from './Components/Navigation/Navigation';
 import QuoteOfTheDay from './Components/QuoteOfTheDay/QuoteOfTheDay';
 import SignIn from './Components/SignIn/SignIn';
 import SignUp from './Components/SignUp/SignUp';
+import AboutUs from './Components/AboutUs/AboutUs';
 
 class App extends Component {
   constructor() {
@@ -28,7 +29,11 @@ class App extends Component {
           : (
             this.state.route === 'SignIn' 
             ? <SignIn onRouteChange={this.onRouteChange}/>
-            : <SignUp onRouteChange={this.onRouteChange}/>
+            : ( 
+                this.state.route === 'SignUp'
+                ? <SignUp onRouteChange={this.onRouteChange}/> 
+                : <AboutUs onRouteChange={this.onRouteChange}/>
+              )
           )
         }
       </div>
