@@ -2,30 +2,30 @@ import React, { Component } from 'react';
 import './App.css';
 import Navigation from './Components/Navigation/Navigation';
 import QuoteOfTheDay from './Components/QuoteOfTheDay/QuoteOfTheDay';
+import SignIn from './Components/SignIn/SignIn';
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      quotes: ,
-      isloaded: false,
+      route: 'SignIn'
     }
   }
 
-  componentDidMount() {
-
-    
-
+  onRouteChange = (route) => {
+    this.setState({route:route});
   }
 
   render() {
     return (
       <div className="App">
-        <Navigation />
-        <QuoteOfTheDay />
-        {/*<RandomQuote />
-        <GenerateRandomQuote />*/}
+        <Navigation onRouteChange={this.onRouteChange}/> 
+        { this.state.true === 'SignIn' 
+          ? <SignIn onRouteChange={this.onRouteChange}/>
+        :<div>
+          <QuoteOfTheDay />
+        </div>
+        }
       </div>
     );
   }
