@@ -1,0 +1,15 @@
+.Heading {
+	padding-top: 0.9%;
+	margin-right: 15%;
+	font-size: 30px;
+	color: white;
+}
+
+.link:hover {
+	border-radius: 4px;
+	box-shadow: 2px 2px;
+}
+
+.link:active {
+	box-shadow: none;
+}
