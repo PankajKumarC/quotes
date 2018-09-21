@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      route: 'SignIn'
+      route: 'Navigation'
     }
   }
 
@@ -16,11 +16,11 @@ class App extends Component {
     this.setState({route:route});
   }
 
-  render() {
+  render() {  
     return (
       <div className="App">
         <Navigation onRouteChange={this.onRouteChange}/> 
-        { this.state.true === 'SignIn' 
+        { this.state.route === 'SignIn' 
           ? <SignIn onRouteChange={this.onRouteChange}/>
         :<div>
           <QuoteOfTheDay />
