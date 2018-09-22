@@ -5,6 +5,7 @@ import QuoteOfTheDay from './Components/QuoteOfTheDay/QuoteOfTheDay';
 import SignIn from './Components/SignIn/SignIn';
 import SignUp from './Components/SignUp/SignUp';
 import AboutUs from './Components/AboutUs/AboutUs';
+import Heading from './Components/Heading/Heading';
 
 class App extends Component {
   constructor() {
@@ -22,6 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation onRouteChange={this.onRouteChange}/> 
+        <Heading onRouteChange={this.onRouteChange}/>
         { this.state.route === 'home' 
           ? <div>
             <QuoteOfTheDay />
